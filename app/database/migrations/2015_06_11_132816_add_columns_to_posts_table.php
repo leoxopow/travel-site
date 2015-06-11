@@ -14,7 +14,9 @@ class AddColumnsToPostsTable extends Migration {
 	{
 		Schema::table('posts', function(Blueprint $table)
 		{
-			
+			$table->integer('category_id');
+            $table->string('thumbnail');
+            $table->string('header_post');
 		});
 	}
 
