@@ -1,1 +1,10 @@
-/home/leoxopow/www/travel-site/app/views/template/layout.blade.php
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+@yield('content')
+</body>
+</html>
