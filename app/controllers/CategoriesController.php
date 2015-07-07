@@ -104,4 +104,8 @@ class CategoriesController extends \BaseController {
 		return Redirect::route('categories.index');
 	}
 
+    public function test(){
+        return "test";
+    }
+
 }
