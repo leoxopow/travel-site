@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@index');
 
 Route::resource('posts', 'PostsController');
 Route::resource('categories', 'CategoriesController');
