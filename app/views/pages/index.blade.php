@@ -1,1 +1,5 @@
-/home/leoxopow/www/travel-site/app/views/pages/index.blade.php
+@layout('template.layout')
+
+@section('content')
+    HEllo
+@stop
