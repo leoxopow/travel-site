@@ -1,0 +1,1 @@
+/home/leoxopow/www/travel-site/app/views/categories/create.blade.php
