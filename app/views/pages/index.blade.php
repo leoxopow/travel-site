@@ -6,7 +6,7 @@
             <div class="row">
                 <ul class="bxslider">
                     <li>
-                        <img src="{{asset('images/slide2.jpg')}}" alt="">
+                        <img src="{{asset('app/images/slide2.jpg')}}" alt="">
                         <div class="caption">
                             <h1>Tentacles Abound in Our Best Jellyfish Pictures</h1>
                             <p class="description">James Gurney picks the most interesting
