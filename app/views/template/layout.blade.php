@@ -21,12 +21,13 @@
 @include('template.header')
 @yield('content')
 @include('template.footer')
+@include('template.modals')
 {{--assets_begin--}}
 <script src="{{asset('app/bower_components/jquery/dist/jquery.min.js')}}"></script>
-<!-- Bootstrap JavaScript -->
 <script src="{{asset('app/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('app/bower_components/bxslider/jquery.easing.1.3.js')}}"></script>
 <script src="{{asset('app/bower_components/bxslider-4/dist/jquery.bxslider.min.js')}}"></script>
+<script src="{{asset('app/bower_components/parallax.js/parallax.js')}}"></script>
 <script src="{{asset('app/js/main.js')}}"></script>
 {{--assets_end--}}
 </body>

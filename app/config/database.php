@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'travel',
 			'username'  => 'root',
-			'password'  => 'strela62',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
