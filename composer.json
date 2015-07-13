@@ -6,7 +6,9 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "way/generators": "~2.0",
-        "barryvdh/laravel-ide-helper": "~1.11"
+        "barryvdh/laravel-ide-helper": "~1.11",
+	  	"d11wtq/boris": "~1.0",
+	  	"sleeping-owl/admin": "1.*"
 	},
 	"autoload": {
 		"classmap": [

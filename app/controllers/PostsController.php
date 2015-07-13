@@ -11,7 +11,7 @@ class PostsController extends \BaseController {
 	{
 		$posts = Post::all();
 
-		return View::make('posts.index', compact('posts'));
+		$this->layout->content = View::make('posts.index', compact('posts'));
 	}
 
 	/**
@@ -51,9 +51,9 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$post = Post::findOrFail($id);
-
-		return View::make('posts.show', compact('post'));
+//		$post = Post::findOrFail($id);
+		$post = '';
+		$this->layout->content = View::make('posts.show', compact('post'));
 	}
 
 	/**

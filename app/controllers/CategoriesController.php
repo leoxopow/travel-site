@@ -51,9 +51,9 @@ class CategoriesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$category = Category::findOrFail($id);
-
-		return View::make('categories.show', compact('category'));
+		$category = "";
+//		$category = Category::findOrFail($id);
+		$this->layout->content = View::make('categories.show', compact('category'));
 	}
 
 	/**

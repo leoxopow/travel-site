@@ -108,6 +108,24 @@ header{
         font-size: 10px;
         font-weight: 700;
         padding: 10px 35px;
+        &.clicked{
+            background-color: #f3f3f3;
+            &:hover{
+                border-top: 1px solid #ededed;
+            }
+        }
+        &:hover{
+            border-top: 2px solid #ededed;
+        }
+        &:focus{
+            outline: none;
+            &:active{
+                outline: none;
+            }
+        }
+        &:active{
+            outline: none;
+        }
 
     }
     .navbar-main{
@@ -476,16 +494,19 @@ header{
 }
 .promo-post{
     position: relative;
-    z-index: 1;
+    //z-index: 1;
     padding: 20px 0 40px;
+    max-height: 500px;
+    height: 500px;
     .promo-thumb{
         width: 100%;
         position: relative;
-        z-index: 2;
+        //z-index: 2;
+
     }
     .info{
         position: absolute;
-        z-index: 3;
+        //z-index: 3;
         top: 20%;
         display: inline-block;
         max-width: 600px;
@@ -1284,5 +1305,15 @@ footer{
                }
             }
         }
+    }
+}
+.popover-custom{
+    legend{
+        font-family: "Montserrat";
+        font-weight: 700;
+        color: #3c3d41;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-bottom: none;
     }
 }
