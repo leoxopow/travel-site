@@ -1,0 +1,32 @@
+<header>
+    <div class="container">
+        <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{asset("")}}"><img src="{{asset('app/images/logo.png')}}" alt=""></a>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-main">
+                    <li><a href="#">DO OR DON’T</a></li>
+                    <li><a href="#">STYLE</a></li>
+                    <li><a href="#">SOCIAL LIFE</a></li>
+                    <li><a href="#">NATURE</a></li>
+                    <li><a href="#">FOOD</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="with_btn"><button class="btn btn-signIn" rel="popover" data-popover-content="#loginForm">Sign In</button></li>
+                    <li><a href=""><img src="{{asset('app/images/Search_icon.png')}}" alt=""></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+</header>
