@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{asset("")}}"><img src="{{asset('app/images/logo.png')}}" alt=""></a>
+                <a class="navbar-brand" href="{{url("")}}"><img src="{{asset('app/images/logo.png')}}" alt=""></a>
 
             </div>
 
@@ -23,10 +23,18 @@
                     <li><a href="#">FOOD</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="with_btn"><button class="btn btn-signIn" rel="popover" data-popover-content="#loginForm">Sign In</button></li>
+                    <li class="with_btn">
+                        @if(!Auth::check())
+                            <button class="btn btn-signIn" rel="popover" data-popover-content="#loginForm">Sign In
+                            </button>
+                        @else
+                            <a href="{{url('user/logout')}}" class="btn btn-signIn">Logout</a>
+                        @endif
+                    </li>
                     <li><a href=""><img src="{{asset('app/images/Search_icon.png')}}" alt=""></a></li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
+            <!-- /.navbar-collapse -->
         </nav>
     </div>
 </header>

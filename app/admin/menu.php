@@ -16,3 +16,4 @@
  */
 
 Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\SleepingOwl\Admin\Controllers\DummyController@getIndex');
+Admin::menu()->url('posts')->label('Posts')->uses('AdminController@createPost');
