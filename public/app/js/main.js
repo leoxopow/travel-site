@@ -18,6 +18,8 @@ $(function(){
 		}
 	}).click(function(e) {
 		e.preventDefault();
-		$(this).toggleClass('clicked');
+	});
+	$('.close-popover').click(function(){
+		$('[rel="popover"]').popover('hide');
 	});
 });

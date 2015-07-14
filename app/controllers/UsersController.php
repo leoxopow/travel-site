@@ -12,7 +12,7 @@ class UsersController extends \BaseController {
 		if (!Auth::check())
 			$this->layout->content = View::make('users.index');
 		else
-			return Redirect::to('users/id' . Auth::user()->id);
+			return Redirect::back();
 	}
 
 	/**
@@ -107,8 +107,8 @@ class UsersController extends \BaseController {
 
 	public function auth()
 	{
-		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')))) {
-			return Redirect::intended('user/profile');
+		if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')))) {
+			return Redirect::back();
 		}
 		return Redirect::back()->with('error', 1);
 	}

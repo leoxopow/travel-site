@@ -1,5 +1,6 @@
 <?php
 
+
 class DatabaseSeeder extends Seeder {
 
 	/**
@@ -9,9 +10,21 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();
+		$this->call('UsersTableSeeder');
 
-		// $this->call('UserTableSeeder');
+		$this->command->info('User table seeded!');
+	}
+
+}
+
+class UsersTableSeeder extends Seeder {
+
+	public function run()
+	{
+		$user = new User();
+		$user->username = 'author';
+		$user->password = Hash::make('111222');
+		$user->save();
 	}
 
 }

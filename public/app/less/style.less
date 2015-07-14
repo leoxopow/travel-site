@@ -60,7 +60,17 @@
     font-weight: 700;
 }
 
-
+.btn, button, a{
+    &:focus{
+        outline: none;
+        &:active{
+            outline: none;
+        }
+    }
+    &:active{
+        outline: none;
+    }
+}
 header{
     .navbar-brand{
         padding-top: 22px;
@@ -98,6 +108,12 @@ header{
             }
         }
     }
+    button[aria-describedby]{
+        background-color: #f3f3f3;
+        &:hover{
+            border-top: 1px solid #ededed;
+        }
+    }
     .btn-signIn{
         background-color: #fff;
         border: 1px solid #ededed;
@@ -108,12 +124,7 @@ header{
         font-size: 10px;
         font-weight: 700;
         padding: 10px 35px;
-        &.clicked{
-            background-color: #f3f3f3;
-            &:hover{
-                border-top: 1px solid #ededed;
-            }
-        }
+
         &:hover{
             border-top: 2px solid #ededed;
         }
@@ -1308,12 +1319,126 @@ footer{
     }
 }
 .popover-custom{
-    legend{
-        font-family: "Montserrat";
-        font-weight: 700;
-        color: #3c3d41;
-        font-size: 14px;
-        text-transform: uppercase;
-        border-bottom: none;
+    width: 480px;
+    padding-bottom: 50px;
+    padding-right: 40px;
+    padding-left: 40px;
+    .close-popover{
+        width: 27px;
+        height: 27px;
+        border: 1px solid #efefef;
+        background-color: #ffffff;
+        border-radius: 50%;
+        padding: 0;
+        position: absolute;
+        right: 16px;
+        top: 13px;
+        &:hover{
+            background: #efefef;
+        }
     }
+    h2{
+        font-family: "Montserrat";
+        color: #3c3d41;
+        font-size: 22px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        margin-bottom: 40px;
+    }
+    .form-control{
+        font-family: Montserrat;
+        color:  #888888;
+        font-size: 14px;
+        font-weight: 400;
+        padding-left: 45px;
+        border-color: transparent;
+        height: 45px;
+        &#username{
+            background: #eee url('../images/username_icon.png') 13px center no-repeat;
+        }
+        &#password{
+            background: #eee url('../images/password_icon.png') 13px center no-repeat;
+        }
+    }
+    .bottom{
+        font-family: Montserrat;
+        color:  #878787;
+        font-size: 11px;
+        font-weight: 400;
+        a{
+            color:  #2e71f0;
+        }
+        .txt{
+            padding-top: 10px;
+        }
+        .btn{
+            border-radius: 16px;
+            background-color:  #ffffff;
+            font-family: Montserrat;
+            color:  #3c3d41;
+            font-size: 10px;
+            line-height: 9px;
+            font-weight: 700;
+            border: 1px solid #e0e0e0;
+            text-transform: uppercase;
+            padding: 9px 16px;
+            &:hover{
+                background-color: #e0e0e0;
+            }
+            &:focus{
+                outline: none;
+                &:active{
+                    outline: none;
+                }
+            }
+        }
+    }
+    .twitter{
+        background: #00acf5 url('../images/sign_whith_twitter.png') 17px center no-repeat;
+        height: 40px;
+        width: 50%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom-left-radius: 4px;
+        padding-left: 50px;
+        padding-top: 11px;
+        font-family: "Montserrat";
+        color:  #ffffff;
+        font-size: 10px;
+        font-weight: 700;
+        span{
+            font-family: "PTSerif";
+            color:  #ffffff;
+            font-size: 12px;
+            font-style: italic;
+        }
+    }
+    .facebook{
+        background: #1b579d url('../images/sign_with_facebook.png') 17px center no-repeat;
+        height: 40px;
+        width: 50%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-bottom-right-radius: 4px;
+        padding-left: 50px;
+        padding-top: 11px;
+        font-family: "Montserrat";
+        color:  #ffffff;
+        font-size: 10px;
+        font-weight: 700;
+        span{
+            font-family: "PTSerif";
+            color:  #ffffff;
+            font-size: 12px;
+            font-style: italic;
+        }
+    }
+}
+.popover{
+    max-width: 500px;
 }
