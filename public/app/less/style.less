@@ -1442,3 +1442,54 @@ footer{
 .popover{
     max-width: 500px;
 }
+.profile-cover{
+    height: 400px;
+    overflow: hidden;
+    .info{
+        background: url('../images/shape.png') no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 400px;
+        padding-top: 80px;
+        .user-role{
+            font-family: Montserrat;
+            color:  #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 9px;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+        h2{
+            font-family: "Montserrat";
+            color:  #ffffff;
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 45px;
+            margin-top: 25px;
+        }
+        .social-author{
+            text-align: center;
+            a{
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                line-height: 28px;
+                border-radius: 50%;
+                text-align: center;
+                border: 1px solid #ffffff;
+                img{
+                    vertical-align: middle;
+                }
+                +a{
+                    margin-left: 12px;
+                }
+                &:hover{
+                    background: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+    }
+}

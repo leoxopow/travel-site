@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index');
 Route::resource('posts', 'PostsController');
 Route::resource('categories', 'CategoriesController');
 Route::resource('tags', 'TagsController');
+Route::resource('users', 'UsersController');
 Route::get('user/signUp', 'UsersController@create');
 Route::get('user/login', 'UsersControllers@index');
 Route::post('user/login', 'UsersController@auth');
