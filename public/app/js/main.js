@@ -19,7 +19,7 @@ $(function(){
 	}).click(function(e) {
 		e.preventDefault();
 	});
-	$('.close-popover').click(function(){
+	$('.close-popover').on('click', function (e) {
 		$('[rel="popover"]').popover('hide');
 	});
 });

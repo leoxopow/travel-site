@@ -54,7 +54,7 @@ class UsersController extends \BaseController {
 	{
 		$user = User::findOrFail($id);
 
-		return View::make('users.show', compact('user'));
+		$this->layout->content = View::make('users.show', compact('user'));
 	}
 
 	/**
