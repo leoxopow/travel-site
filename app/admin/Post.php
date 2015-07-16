@@ -1,12 +1,21 @@
 <?php
 
-Admin::model('\Post')
-    ->columns(function(){
-//        Column::string('title', 'Title');
+Admin::model('\Post')->title('Posts')
 
-    })
-    ->title('Posts')
-    ->form(function () {
-        FormItem::text('title', 'Title')->required();
-//        FormItem::ckeditor('body', 'Text');
-    });
+
+    ->columns(function(){
+        Column::string('title');
+        Column::string('author');
+        column::string('category');
+
+
+
+    })->form(function () {
+        FormItem::text('title', 'Title')->required()->unique();
+        FormItem::select('category_id', 'Category')->list(\Category::getList())->required();
+        FormItem::ckeditor('text', 'Text')->required();
+//        FormItem::image('image', 'Image')->required();
+
+    }
+
+    );
