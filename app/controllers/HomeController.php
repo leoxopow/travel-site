@@ -20,4 +20,21 @@ class HomeController extends BaseController {
 		$this->layout->content = View::make('pages.index');
 	}
 
+	public function privacy()
+	{
+		$this->layout->content = View::make('pages.privacy');
+	}
+
+	public function subscribe()
+	{
+		$email = Input::get('email');
+		$password = str_random(6);
+		$validator = Validator::make(['email' => $email], ['email'=>'required|email|unique:users']);
+		if (!$validator->fails()) {
+			$user = new User();
+			$user->email = $email;
+			$user->password = Hash::make($password);
+			$user->save();
+		}
+	}
 }
