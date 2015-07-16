@@ -13,5 +13,6 @@ Admin::model('\Category')->title('Category')
         FormItem::text('title','Title')->required()->unique();
         FormItem::text('description','Description')->required();
         FormItem::text('slug','Slug');
+        FormItem::text('color','Color (hex)');
 
     });
