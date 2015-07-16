@@ -22,3 +22,6 @@ Route::get('user/login', 'UsersControllers@index');
 Route::post('user/login', 'UsersController@auth');
 Route::get('user/logout', 'UsersController@logout');
 Route::controller('password', 'RemindersController');
+Route::post('subscribe', ['before' => 'csrf', 'uses'=>'HomeController@subscribe']);
+
+Route::any('privacy', 'HomeController@privacy');

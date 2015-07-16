@@ -45,14 +45,14 @@
                         SUBSCRIBE TO OUR NEWS
                     </h4>
                     <p class="copyright">A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
-                    <form action="" method="post">
+                    {{Form::open(['url'=>url('subscribe')])}}
                         <div class="input-group">
-                            <input type="text" class="form-control inp-subscribe" placeholder="E-mail">
+                            <input type="email" class="form-control inp-subscribe" placeholder="E-mail">
 							      <span class="input-group-btn">
 							        <button class="btn btn-default subscribe" type="button"><i class="glyphicon glyphicon-envelope"></i></button>
 							      </span>
                         </div>
-                    </form>
+                    {{Form::close()}}
                 </div>
             </section>
         </div>

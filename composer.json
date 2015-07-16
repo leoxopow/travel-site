@@ -14,9 +14,8 @@
     "sleeping-owl/admin": "1.*",
     "bkwld/croppa": "~3.0",
     "jenssegers/date": "~2.0",
-    "adamwathan/eloquent-oauth": "dev-master",
     "rtconner/laravel-likeable": "0.2.*",
-    "adamwathan/eloquent-oauth-l4": "dev-master"
+    "t4s/camelot-auth": "1.0.*"
   },
   "autoload": {
     "classmap": [
