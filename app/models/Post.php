@@ -7,7 +7,7 @@ class Post extends SleepingOwl\Models\SleepingOwlModel {
 	public static $rules = ['title','body','category'];
 
 	// Don't forget to fill this array
-	protected $fillable = ['user_id', 'category_id'];
+	protected $fillable = ['username', 'categories.id'];
 
 	protected $hidden = [
 		'created_at',

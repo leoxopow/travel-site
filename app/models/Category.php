@@ -28,4 +28,7 @@ class Category extends SleepingOwl\Models\SleepingOwlModel {
 		}
 		return $arr;
 	}
+//	public function getCategory(){
+//		return $this->belongsToMany('Category');
+//	}
 }
