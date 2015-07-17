@@ -94,6 +94,28 @@
         <section class="articles">
             <div class="container">
                 <div class="row">
+                    @foreach($posts as $item)
+                        <article class="col-md-3 article">
+                            <div class="card">
+                                <div class="thumb">
+                                    <a href="{{url('posts/'.$item->id)}}">
+                                        <img src="{{url('imgPostThumbnail/'.$item->id)}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="caption">
+                                    <h4>
+                                        <a href="{{url('posts/'.$item->id)}}">{{str_limit($item->title, 40)}}</a>
+                                    </h4>
+
+                                    <p class="description">
+                                        <a href="{{url('posts/'.$item->id)}}">{{str_limit($item->description, 40)}}</a>
+                                    </p>
+                                </div>
+                                <a href="#" class="category-label"
+                                   style="background-color: {{$item->category->color}}}; color: {{$item->category->color}}}; border: 1px solid {{$item->category->color}}"><span>{{$item->category->title}}</span></a>
+                            </div>
+                        </article>
+                    @endforeach
                     <article class="col-md-3 article">
                         <div class="card">
                             <div class="thumb">

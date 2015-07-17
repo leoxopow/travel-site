@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'trvel',
+			'database'  => 'travel',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

@@ -16,11 +16,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-main">
-                    <li><a href="#">DO OR DON’T</a></li>
-                    <li><a href="#">STYLE</a></li>
-                    <li><a href="#">SOCIAL LIFE</a></li>
-                    <li><a href="#">NATURE</a></li>
-                    <li><a href="#">FOOD</a></li>
+                    @foreach($categories as $item)
+                        <li><a href="{{url('categories/'.$item->id)}}">{{$item->title}}</a></li>
+                    @endforeach
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="with_btn">

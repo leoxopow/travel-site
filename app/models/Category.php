@@ -4,7 +4,7 @@ use SleepingOwl\Models\SleepingOwlModel;
 use SleepingOwl\Models\Interfaces\ModelWithImageFieldsInterface;
 use SleepingOwl\Admin\Models\Form\Interfaces\FormItemInterface;
 
-class Category extends SleepingOwl\Models\SleepingOwlModel {
+class Category extends SleepingOwlModel {
 
 	// Add your validation rules here
 	public static $rules = ['title','description'];

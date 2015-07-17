@@ -17,7 +17,8 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		$this->layout->content = View::make('pages.index');
+		$posts = Post::paginate(30);
+		$this->layout->content = View::make('pages.index', compact('posts'));
 	}
 
 	public function privacy()
@@ -36,5 +37,20 @@ class HomeController extends BaseController {
 			$user->password = Hash::make($password);
 			$user->save();
 		}
+	}
+
+	public function imgPostThumbnail($path)
+	{
+		$post=Post::find($path);
+
+		$img = Image::make(asset('images/thumbnails/'.$post->thumbnail))->fit(230, 170);
+		// create response and add encoded image data
+		$response = Response::make($img->encode('jpg'));
+
+		// set content-type
+		$response->header('Content-Type', 'image/jpg');
+
+		// output
+		return $response;
 	}
 }

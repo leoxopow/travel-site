@@ -22,4 +22,7 @@ $(function(){
 	$('.close-popover').on('click', function (e) {
 		$('[rel="popover"]').popover('hide');
 	});
+	$('.post img').each(function(){
+		$(this).after('<small>'+$(this).attr('alt')+'</small>');
+	});
 });

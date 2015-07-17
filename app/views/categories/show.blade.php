@@ -63,7 +63,26 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <article class="col-md-3 article">
+                    @foreach($posts as $item)
+                        <article class="col-md-3 article">
+                            <div class="card">
+                                <div class="thumb">
+                                    <a href="{{url('posts/'.$item->id)}}">
+                                        <img src="{{url('imgPostThumbnail/'.$item->id)}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="caption">
+                                    <h4>
+                                        <a href="{{url('post/'.$item->id)}}">{{str_limit($item->title, 40)}}</a>
+                                    </h4>
+                                    <p class="description">
+                                        <a href="#">{{str_limit($item->description, 40)}}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    @endforeach
+{{--                    <article class="col-md-3 article">
                         <div class="card">
                             <div class="thumb">
                                 <a href="#">
@@ -166,7 +185,7 @@
                                 </p>
                             </div>
                         </div>
-                    </article>
+                    </article>--}}
                 </div>
             </div>
         </section>

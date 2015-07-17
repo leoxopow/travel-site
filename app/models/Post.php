@@ -1,25 +1,45 @@
 <?php
 
 use SleepingOwl\Models\SleepingOwlModel;
-class Post extends SleepingOwl\Models\SleepingOwlModel {
+use SleepingOwl\Models\Interfaces\ModelWithImageFieldsInterface;
+use SleepingOwl\Models\Traits\ModelWithImageOrFileFieldsTrait;
 
-	// Add your validation rules here
-	public static $rules = ['title','body','category'];
+class Post extends SleepingOwlModel implements ModelWithImageFieldsInterface
+{
 
-	// Don't forget to fill this array
-	protected $fillable = ['user_id', 'category_id'];
+    use ModelWithImageOrFileFieldsTrait;
 
-	protected $hidden = [
-		'created_at',
-		'updated_at'
-	];
+    // Add your validation rules here
+    public static $rules = ['title', 'body', 'category_id'];
 
- public  static function getList(){
-	 return array();
- }
-	}    public function category()
+    // Don't forget to fill this array
+    protected $fillable = ['user_id', 'category_id', 'title', 'body', 'thumbnail', 'description'];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
+
+    public static function getList()
     {
-        return $this->belongsTo('category');
+        return array();
+    }
+
+    public function getImageFields()
+    {
+        return [
+            'thumbnail' => 'thumbnails/',
+            'photo' => '',
+            'other' => ['other_images/', function($directory, $originalName, $extension)
+            {
+                return $originalName;
+            }]
+        ];
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('Category');
     }
 
     public function slides()

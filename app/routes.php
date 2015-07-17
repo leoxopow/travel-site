@@ -27,4 +27,5 @@ Route::get('user/logout', 'UsersController@logout');
 Route::controller('password', 'RemindersController');
 Route::post('subscribe', ['before' => 'csrf', 'uses'=>'HomeController@subscribe']);
 
+Route::any('imgPostThumbnail/{path}', 'HomeController@imgPostThumbnail');
 Route::any('privacy', 'HomeController@privacy');

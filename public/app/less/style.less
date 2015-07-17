@@ -89,6 +89,7 @@ header{
             line-height: 19.5px;
             padding-top: 25px;
             padding-bottom: 25px;
+            text-transform: uppercase;
         }
         li{
             position: relative;
@@ -173,7 +174,7 @@ header{
             h1{
                 font-family: "Montserrat";
                 color:  #ffffff;
-                font-size: 52px; /* Приближение из-за подстановки шрифтов */
+                font-size: 52px;
                 font-weight: 700;
                 line-height: 59.8px; 
                 margin-top: 0;
@@ -347,7 +348,7 @@ header{
             height: 130px;
             padding-bottom: 10px;
             position: relative;
-            
+
             h4{
                 a{
                     margin-top: 0;
@@ -810,6 +811,10 @@ footer{
     height: 315px;
     overflow: hidden;
     margin-bottom: 60px;
+    .caption{
+        background-color: rgba(50, 50, 50, 0.6);
+        height: 315px;
+    }
     &.without-pic{
         background-color: #f7f7f7;
     }
@@ -843,7 +848,7 @@ footer{
             font-family: "Montserrat";
             text-transform: uppercase;
             line-height: 9;
-            padding: 5px;
+            padding: 5px 10px;
             border-radius: 4px;
             font-weight: 700;
             font-size: 10px;
@@ -935,6 +940,10 @@ footer{
     }
 }
 .post{
+    img{
+        width: 100%;
+        display: block;
+    }
     .entry{
         font-family: "Montserrat";
         color: #666d70;
@@ -969,7 +978,13 @@ footer{
         line-height: 27px;
         text-align: left;
         margin-bottom: 36px;
+
+        small{
+            color: #868e91;
+            font-size: 12px;
+        }
     }
+
     blockquote{
         font-family: "PTSerif";
         color: #3b3d40;

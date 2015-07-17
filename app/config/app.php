@@ -124,7 +124,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'SleepingOwl\Admin\AdminServiceProvider',
-
+		'Intervention\Image\ImageServiceProvider'
 	),
 
 	/*
@@ -198,7 +198,7 @@ return array(
 		'Column'               => 'SleepingOwl\Admin\Columns\Column',
 		'FormItem'             => 'SleepingOwl\Admin\Models\Form\FormItem',
 		'ModelItem'            => 'SleepingOwl\Admin\Models\ModelItem',
-
+		'Image'			=> 'Intervention\Image\Facades\Image',
 
 	),
 
