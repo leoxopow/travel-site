@@ -21,3 +21,5 @@
  * 		});
  */
 
+//Column::register('color','\App\models\color');
+//FormItem::register('color','\App\models\color');

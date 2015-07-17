@@ -1,16 +1,23 @@
 <?php
 
-class Post extends \Eloquent
-{
+use SleepingOwl\Models\SleepingOwlModel;
+class Post extends SleepingOwl\Models\SleepingOwlModel {
 
-    // Add your validation rules here
-    public static $rules = [
-    ];
+	// Add your validation rules here
+	public static $rules = ['title','body','category'];
 
-    // Don't forget to fill this array
-    protected $fillable = ['title', 'body'];
+	// Don't forget to fill this array
+	protected $fillable = ['user_id', 'category_id'];
 
-    public function category()
+	protected $hidden = [
+		'created_at',
+		'updated_at'
+	];
+
+ public  static function getList(){
+	 return array();
+ }
+	}    public function category()
     {
         return $this->belongsTo('category');
     }

@@ -10,3 +10,5 @@ Thumbs.db
 /app/config/database.php
 /public/node_modules
 /public/app/bower_components
+app/config/app.php
+app/config/queue.php
