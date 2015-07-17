@@ -48,10 +48,10 @@ class User extends SleepingOwlModel implements  ModelWithImageFieldsInterface
 		]);
 	}
 
-	public function getDates()
-	{
-		return array_merge(parent::getDates(), ['birthday']);
-	}
+//	public function getDates()
+//	{
+//		return array_merge(parent::getDates(), ['birthday']);
+//	}
 
 
 	public function setImage($field, $image)
