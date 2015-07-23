@@ -7,9 +7,8 @@ use SleepingOwl\Models\Traits\ModelWithImageOrFileFieldsTrait;
 class Post extends SleepingOwlModel implements ModelWithImageFieldsInterface
 {
 
-    use ModelWithImageOrFileFieldsTrait;
-
-    // Add your validation rules here
+	
+	    // Add your validation rules here
     public static $rules = ['title', 'body', 'category_id'];
 
     // Don't forget to fill this array

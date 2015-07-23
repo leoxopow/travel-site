@@ -6,6 +6,7 @@ Admin::model('\Category')->title('Category')
         Column::string('title');
         Column::string('description');
         Column::string('slug');
+        Column::string('color');
     })
 
     ->form(function()

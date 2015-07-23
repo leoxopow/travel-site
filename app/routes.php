@@ -20,7 +20,9 @@ Route::resource('users', 'UsersController');
 Route::get('admin','AdminController@index');
 Route::get('admin/posts','AdminController@createPost');
 Route::get('admin/categories',['before'=>'csrf', 'uses'=>'AdminController@createCategory']);
-Route::get('user/signUp', 'UsersController@create');
+Route::get('admin/users','UserController@getIndex');
+
+
 Route::get('user/login', 'UsersControllers@index');
 Route::post('user/login', 'UsersController@auth');
 Route::get('user/logout', 'UsersController@logout');
