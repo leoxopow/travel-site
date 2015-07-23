@@ -15,7 +15,9 @@
     "bkwld/croppa": "~3.0",
     "jenssegers/date": "~2.0",
     "rtconner/laravel-likeable": "0.2.*",
-    "t4s/camelot-auth": "1.0.*"
+    "t4s/camelot-auth": "1.0.*",
+    "intervention/image": "^2.3",
+    "fzaninotto/faker": "^1.5"
   },
   "autoload": {
     "classmap": [

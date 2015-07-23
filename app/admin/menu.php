@@ -17,3 +17,6 @@
 
 Admin::menu()->url('/')->label('Start page')->icon('fa-dashboard')->uses('\SleepingOwl\Admin\Controllers\DummyController@getIndex');
 Admin::menu()->url('posts')->label('Posts')->uses('AdminController@createPost');
+Admin::menu()->url('categories')->label('Categories')->uses('AdminController@createCategory');
+Admin::menu()->url('slides')->label('Slides')->uses('AdminController@createSlide');
+Admin::menu()->url('users')->label('Users')->uses('UsersController@getIndex');

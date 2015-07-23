@@ -2,23 +2,23 @@
 
 @section('content')
     <main>
-        <section class="post-caption with-img" data-speed="0.04" data-parallax="scroll" data-image-src="{{asset('app/images/post-img.jpg')}}">
+        <section class="post-caption with-img" data-speed="0.04" data-parallax="scroll" data-image-src="{{asset('images/thumbnails/'.$post->thumbnail)}}">
 
             <div class="caption">
                 <div class="container">
                     <div class="text-center">
                         <a href="#" class="label-category">
-                            Nature
+                            {{$post->category->title}}
                         </a>
                     </div>
                     <h1 class="text-center">
-                        Make Niagara Falls Your next visit
+                        {{$post->title}}
                     </h1>
                     <p class="text-center">
                         <span class="date"><img src="{{asset('app/images/clockIcon.png')}}"alt="">June 9, 2015 9:26 pm</span>
-                        <a href="" class="like"><img src="{{asset('app/images/likeIcon.png')}}" alt="">1243</a>
-                        <a href="" ><img src="{{asset('app/images/commentIcon.png')}}" alt="">13</a>
-                        <button class="btn btn-shares">93 shares </button>
+                        {{--<a href="" class="like"><img src="{{asset('app/images/likeIcon.png')}}" alt="">1243</a>--}}
+                        {{--<a href="" ><img src="{{asset('app/images/commentIcon.png')}}" alt="">13</a>--}}
+                        {{--<button class="btn btn-shares">93 shares </button>--}}
                     </p>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="text-center">
                                 <a href="#" class="name">
-                                    EKATERINA <br> BURCEVA
+                                    Ekaterina <br> Burtseva
                                 </a>
                             </div>
                             <div class="text-center">
@@ -60,38 +60,11 @@
                 </aside>
                 <article class="col-md-8 post">
                     <p class="entry">
-                        The first person to go over the Falls in a barrel and survive was a 63 year old female schoolteacher. <br>
-                        High wire tightrope acts used to be performed across the river.
+                        {{$post->description}}
                     </p>
-                    <h2>About Niagara Falls</h2>
-                    <p>
-                        Twenty percent of the worlds freshwater lies in the Great Lakes, and most flows over Niagara Falls. Is there more mist at the Falls? Is it man made or natural coincidence?The flow of water was stopped completely over both falls on March 29th 1848 due to an ice jam in the upper river for several hours. This is the only known time to have occurred.
-                    </p>
-                    <h3>Interesting facts about Niagara Falls</h3>
-                    <p>
-                        The flow over the American Falls was stopped completely for several months in 1969. The idea was to determine the feasibility of removing the large amount of loose rock from the base of the falls to enhance it's appearance. In the end the final decision was that the expense would be too great.
-                    </p>
-                    <h2>
-                        History
-                    </h2>
-                    <p>
-                        The word "Niagara" is derived from the Iroquois Indian word "Onguiaahra" meaning "the strait". There is an international boundary between the United States and Canada.
-                        Before the invention of film, tourists would sketch pictures of the Falls.
-                        The flow was also halted over both falls on March 30th 1848 due to an ice jam in the upper river.
-                        The movies Niagara and Superman were filmed in part at the Falls.
-                        In the past ten years, two daredevils lost their lives trying to conquer Niagara.
-                        In the evenings, intense spotlights bathe the falls with different shades of color.
-                    </p>
-                    <blockquote>
-                        The movies Niagara and Superman were filmed in part at the Falls.
-                    </blockquote>
-                    <p>
-                        The tremendous volume of water never stops flowing,  However, the falling water and mist create ice formations along the banks of the falls and river. This can result in mounds of ice as thick as fifty feet. If the winter is cold for long enough, the ice will completely stretch across the river and form what is known as the "ice bridge".  This ice bridge can extend for several miles down river until it reaches the area known as the lower rapids.
-                    </p>
+                    {{$post->body}}
                     <div class="tags">
-                        <a href="#">nature</a>
-                        <a href="#">niagara</a>
-                        <a href="#">fall</a>
+
                     </div>
                     <div class="share">
                         <button class="like">

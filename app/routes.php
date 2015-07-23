@@ -17,11 +17,23 @@ Route::resource('posts', 'PostsController');
 Route::resource('categories', 'CategoriesController');
 Route::resource('tags', 'TagsController');
 Route::resource('users', 'UsersController');
-Route::get('user/signUp', 'UsersController@create');
+Route::get('admin','AdminController@index');
+Route::get('admin/posts','AdminController@createPost');
+Route::get('admin/categories',['before'=>'csrf', 'uses'=>'AdminController@createCategory']);
+Route::get('admin/users','UserController@getIndex');
+
+
 Route::get('user/login', 'UsersControllers@index');
 Route::post('user/login', 'UsersController@auth');
 Route::get('user/logout', 'UsersController@logout');
 Route::controller('password', 'RemindersController');
 Route::post('subscribe', ['before' => 'csrf', 'uses'=>'HomeController@subscribe']);
 
+Route::any('imgPostThumbnail/{path}', 'HomeController@imgPostThumbnail');
+Route::any('imgPostThumbnail2col/{id}', 'HomeController@imgPostThumbnail2col');
+Route::any('imgSlideCategory/{id}', 'HomeController@imgSlideCategory');
 Route::any('privacy', 'HomeController@privacy');
+
+Route::get('search', 'HomeController@search');
+Route::any('pageHome', 'HomeController@pageHome');
+Route::any('pageCategory', 'CategoriesController@pageCategory');

@@ -30,6 +30,7 @@ class AdminController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+
 	public function store()
 	{
 		//

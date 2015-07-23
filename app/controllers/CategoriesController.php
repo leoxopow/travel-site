@@ -51,11 +51,24 @@ class CategoriesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$category = "";
-//		$category = Category::findOrFail($id);
-		$this->layout->content = View::make('categories.show', compact('category'));
+		$category = Category::findOrFail($id);
+		$posts = Post::where('category_id', $category->id)->orderBy('created_at', 'desc')->paginate(12);
+		$slides = Post::where('category_id', $category->id)->where('thumbnail', '<>', '')->orderBy('visit', 'desc')->paginate(3);
+		$this->layout->content = View::make('categories.show', compact('category', 'posts', 'slides'));
 	}
 
+	public function pageCategory()
+	{
+		$posts = Post::where('category_id', Input::get('category'))->orderBy('created_at', 'desc')->paginate(12);
+		$postsToJson = [];
+		foreach ($posts as $post) {
+			$post->shorten_description = str_limit($post->description, 30);
+			$post->shorten_title = str_limit($post->title, 40);
+			$post->category;
+			$postsToJson[] = $post;
+		}
+		return $posts;
+	}
 	/**
 	 * Show the form for editing the specified category.
 	 *
