@@ -8,30 +8,16 @@
                     <div class="col-md-9">
                         <div class="row">
                             <ul class="bx-category">
-                                <li>
-                                    <img src="{{asset("app/images/slide-category.jpg")}}" alt="">
-                                    <div class="toRead">
-                                        <h2>Must See Places of the New Year</h2>
-                                        <p>Whether it’s India’s literary hub or Switzerland’s mountain majesty, these go-now destinations will send you packing.</p>
-                                        <a href="#" class="btn btn-more">Read more</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="{{asset("app/images/slide-category.jpg")}}" alt="">
-                                    <div class="toRead">
-                                        <h2>Must See Places of the New Year</h2>
-                                        <p>Whether it’s India’s literary hub or Switzerland’s mountain majesty, these go-now destinations will send you packing.</p>
-                                        <a href="#" class="btn btn-more">Read more</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="{{asset("app/images/slide-category.jpg")}}" alt="">
-                                    <div class="toRead">
-                                        <h2>Must See Places of the New Year</h2>
-                                        <p>Whether it’s India’s literary hub or Switzerland’s mountain majesty, these go-now destinations will send you packing.</p>
-                                        <a href="#" class="btn btn-more">Read more</a>
-                                    </div>
-                                </li>
+                                @foreach($slides as $item)
+                                    <li>
+                                        <img src="{{url('imgSlideCategory/'.$item->id)}}" alt="">
+                                        <div class="toRead">
+                                            <h2>{{str_limit($item->title, 35)}}</h2>
+                                            <p>{{str_limit($item->description, 120)}}</p>
+                                            <a href="{{url('posts/'.$item->id)}}" class="btn btn-more">Read more</a>
+                                        </div>
+                                    </li>
+                                @endforeach
 
                             </ul>
                         </div>
@@ -73,7 +59,7 @@
                                 </div>
                                 <div class="caption">
                                     <h4>
-                                        <a href="{{url('post/'.$item->id)}}">{{str_limit($item->title, 40)}}</a>
+                                        <a href="{{url('post/'.$item->id)}}">{{str_limit($item->title, 30)}}</a>
                                     </h4>
                                     <p class="description">
                                         <a href="#">{{str_limit($item->description, 40)}}</a>
@@ -186,7 +172,13 @@
                             </div>
                         </div>
                     </article>--}}
+                        @if($posts->getCurrentPage() < $posts->getLastPage())
+                            <div class="col-xs-12" id="more">
+                                <button class="btn btn-block btn-lg btn-load" id="moreHome" data-page="2" data-category="{{$category->id}}">Load More</button>
+                            </div>
+                        @endif
                 </div>
+
             </div>
         </section>
     </main>

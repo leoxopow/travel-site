@@ -52,6 +52,8 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::findOrFail($id);
+		$post->visit++;
+		$post->save();
 		$this->layout->content = View::make('posts.show', compact('post'));
 	}
 
@@ -99,8 +101,14 @@ class PostsController extends \BaseController {
 	public function destroy($id)
 	{
 		Post::destroy($id);
-
 		return Redirect::route('posts.index');
+	}
+
+	public function search()
+	{
+		$q = Input::get('q');
+		$posts = Post::where('title', 'like', '%'.$q.'%')->orWhere('body', 'like', '%'.$q.'%')->orWhere('description', 'like', '%'.$q.'%')->get();
+		$this->layout->content = View::make('pages.search', compact('posts'));
 	}
 
 }

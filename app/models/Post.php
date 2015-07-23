@@ -7,21 +7,29 @@ use SleepingOwl\Models\Traits\ModelWithImageOrFileFieldsTrait;
 class Post extends SleepingOwlModel implements ModelWithImageFieldsInterface
 {
 
-	
+    use ModelWithImageOrFileFieldsTrait;
+
 	    // Add your validation rules here
     public static $rules = ['title', 'body', 'category_id'];
 
     // Don't forget to fill this array
-    protected $fillable = ['user_id', 'category_id', 'title', 'body', 'thumbnail', 'description'];
+    protected $fillable = ['user_id', 'category_id', 'title', 'body', 'thumbnail', 'description', 'typecol'];
 
     protected $hidden = [
         'created_at',
         'updated_at'
     ];
 
+
     public static function getList()
     {
-        return array();
+        $all = Post::all();
+        $arr = [];
+        foreach($all as $item)
+        {
+            $arr[$item->id] = $item->title;
+        }
+        return $arr;
     }
 
     public function getImageFields()
@@ -35,6 +43,7 @@ class Post extends SleepingOwlModel implements ModelWithImageFieldsInterface
             }]
         ];
     }
+
 
     public function category()
     {
@@ -55,4 +64,5 @@ class Post extends SleepingOwlModel implements ModelWithImageFieldsInterface
     {
         return URL::asset($this->category->slug . '/' . $this->slug);
     }
+
 }

@@ -1,7 +1,9 @@
 <?php
 
-class Slide extends \Eloquent {
-	protected $fillable = [];
+use SleepingOwl\Models\SleepingOwlModel;
+
+class Slide extends SleepingOwlModel {
+	protected $fillable = ['category_id', 'post_id'];
 
 	public function post()
 	{

@@ -30,4 +30,10 @@ Route::controller('password', 'RemindersController');
 Route::post('subscribe', ['before' => 'csrf', 'uses'=>'HomeController@subscribe']);
 
 Route::any('imgPostThumbnail/{path}', 'HomeController@imgPostThumbnail');
+Route::any('imgPostThumbnail2col/{id}', 'HomeController@imgPostThumbnail2col');
+Route::any('imgSlideCategory/{id}', 'HomeController@imgSlideCategory');
 Route::any('privacy', 'HomeController@privacy');
+
+Route::get('search', 'HomeController@search');
+Route::any('pageHome', 'HomeController@pageHome');
+Route::any('pageCategory', 'CategoriesController@pageCategory');
