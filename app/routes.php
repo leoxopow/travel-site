@@ -43,4 +43,4 @@ Route::any('pageCategory', 'CategoriesController@pageCategory');
 Route::get('length', function(){
     return strlen('Light a bonfire in the garden, and step bravely into your best-dressed decade');
 });
-
+Route::get('register', 'HomeController@create');

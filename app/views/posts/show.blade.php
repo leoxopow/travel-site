@@ -26,37 +26,38 @@
         <section class="container article-inside">
             <div class="row">
                 <aside class="col-md-3">
-                    <section class="author_card">
-                        <div class="info">
-                            <div class="text-center">
-                                <a href="#" class="avatar">
-                                    <img src="{{asset('app/images/ava-post.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div class="text-center">
-                                <a href="#" class="name">
-                                    Ekaterina <br> Burtseva
-                                </a>
-                            </div>
-                            <div class="text-center">
-                                <cite>Elite Author</cite>
-                            </div>
-                        </div>
-                        <div class="clearfix author-social">
-                            <div class="col-xs-4">
-                                <a href="#"><img src="{{asset('app/images/author_fb.png')}}" alt=""></a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#"><img src="{{asset('app/images/twitter_author.png')}}" alt=""></a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#"><img src="{{asset('app/images/instagram_author.png')}}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="all-author-posts">
-                            <a href="#">All posts</a>
-                        </div>
-                    </section>
+
+                    {{--<section class="author_card">--}}
+                        {{--<div class="info">--}}
+                            {{--<div class="text-center">--}}
+                                {{--<a href="#" class="avatar">--}}
+                                    {{--<img src="{{asset('app/images/ava-post.png')}}" alt="">--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                            {{--<div class="text-center">--}}
+                                {{--<a href="#" class="name">--}}
+                                    {{--Ekaterina <br> Burtseva--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                            {{--<div class="text-center">--}}
+                                {{--<cite>Elite Author</cite>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="clearfix author-social">--}}
+                            {{--<div class="col-xs-4">--}}
+                                {{--<a href="#"><img src="{{asset('app/images/author_fb.png')}}" alt=""></a>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-xs-4">--}}
+                                {{--<a href="#"><img src="{{asset('app/images/twitter_author.png')}}" alt=""></a>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-xs-4">--}}
+                                {{--<a href="#"><img src="{{asset('app/images/instagram_author.png')}}" alt=""></a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="all-author-posts">--}}
+                            {{--<a href="#">All posts</a>--}}
+                        {{--</div>--}}
+                    {{--</section>--}}
                 </aside>
                 <article class="col-md-8 post">
                     <p class="entry">
