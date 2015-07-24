@@ -81,4 +81,21 @@ class HomeController extends BaseController
         $response->header('Content-Type', 'image/jpg');
         return $response;
     }
+    public function imgMainSlider($id)
+    {
+        $post = Post::find($id);
+        $img = Image::make(asset('images/thumbnails/' . $post->thumbnail))->fit(1200, 500);
+        $response = Response::make($img->encode('jpg'));
+        $response->header('Content-Type', 'image/jpg');
+        return $response;
+    }
+
+    public function imgResponsives($id)
+    {
+        $post = Post::find($id);
+        $img = Image::make(asset('images/thumbnails/' . $post->thumbnail))->fit(400, 300);
+        $response = Response::make($img->encode('jpg'));
+        $response->header('Content-Type', 'image/jpg');
+        return $response;
+    }
 }

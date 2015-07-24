@@ -23,7 +23,7 @@
                 </div>
             </div>
         </section>
-        <section class="container">
+        <section class="container article-inside">
             <div class="row">
                 <aside class="col-md-3">
                     <section class="author_card">

@@ -32,8 +32,15 @@ Route::post('subscribe', ['before' => 'csrf', 'uses'=>'HomeController@subscribe'
 Route::any('imgPostThumbnail/{path}', 'HomeController@imgPostThumbnail');
 Route::any('imgPostThumbnail2col/{id}', 'HomeController@imgPostThumbnail2col');
 Route::any('imgSlideCategory/{id}', 'HomeController@imgSlideCategory');
+Route::any('imgMainSlider/{id}', 'HomeController@imgMainSlider');
+Route::any('imgResponsives/{id}', 'HomeController@imgResponsives');
 Route::any('privacy', 'HomeController@privacy');
 
 Route::get('search', 'HomeController@search');
 Route::any('pageHome', 'HomeController@pageHome');
 Route::any('pageCategory', 'CategoriesController@pageCategory');
+
+Route::get('length', function(){
+    return strlen('Light a bonfire in the garden, and step bravely into your best-dressed decade');
+});
+

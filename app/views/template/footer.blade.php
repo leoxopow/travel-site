@@ -10,16 +10,14 @@
                 </p>
             </section>
             <section class="col-md-4 clearfix">
-                <div class="col-md-6">
+                <div class="col-xs-6">
                     <ul class="nav categories">
-                        <li><a href="">DO OR DON’T</a></li>
-                        <li><a href="">STYLE</a></li>
-                        <li><a href="">SOCIAL LIFE</a></li>
-                        <li><a href="">NATURE</a></li>
-                        <li><a href="">FOOD</a></li>
+                        @foreach($categories as $item)
+                            <li><a href="{{url('categories/'.$item->id)}}">{{$item->title}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                     <ul class="nav">
                         <li><a href="">About</a></li>
                         <li><a href="">Contact</a></li>
