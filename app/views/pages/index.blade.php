@@ -2,12 +2,13 @@
 
 @section('content')
     <main>
+
         <section class="container-fluid">
             <div class="row">
                 <ul class="bxslider">
                     @foreach($slides as $slide)
                         <li>
-                            <img src="{{asset('images/thumbnails/'. $slide->post->thumbnail)}}" alt="">
+                            <img src="{{url('imgMainSlider/'. $slide->post->id)}}" alt="">
 
                             <div class="caption">
                                 <h1 class="text-center">{{$slide->post->title}}</h1>
@@ -42,12 +43,13 @@
                 <div class="row">
                     @foreach($posts as $item)
                         @if($item->thumbnail !== '' && $item->typecol == 0)
-                            <article class="col-md-3 article">
+                            <article class="col-md-3 col-sm-6 article">
                                 <div class="card">
                                     <div class="thumb">
                                         <a href="{{url('posts/'.$item->id)}}">
                                             <img src="{{url('imgPostThumbnail/'.$item->id)}}" alt="">
                                         </a>
+                                        <a href="{{url('post/'.$item->id)}}" class="visible-xs-block"></a>
                                     </div>
                                     <div class="caption">
                                         <h4>
@@ -62,19 +64,15 @@
                                        style="background-color: {{$item->category->color}}; color: {{$item->category->color}}; border: 1px solid {{$item->category->color}}"><span>{{$item->category->title}}</span></a>
                                 </div>
                             </article>
-                        @elseif($item->thumbnail == '' && $item->typecol == 0)
+                        @elseif($item->typecol == 0 && $item->thumbnail == '')
                             <article class="col-md-3 article">
-                                <div class="card-no-thumb" style="background-color: {{$item->category->color}};">
-                                    <a href="{{url('post/'.$item->category->id)}}" class="category-label"
-                                       style="color: {{$item->category->color}}"><span>{{$item->category->title}}</span></a>
-
-                                    <h3><a href="{{url('posts/'.$item->id)}}">{{$item->title}}</a></h3>
-
+                                <div class="card-no-thumb" style="background-color: {{$item->category->color}}">
+                                    <a href="{{url('categories/'.$item->category->id)}}" class="category-label" style="color: {{$item->category->color}}"><span>{{$item->category->title}}</span></a>
+                                    <h3><a href="{{url('posts/'.$item->id)}}">{{str_limit($item->title, 40)}}</a></h3>
                                     <p class="description">
-                                        <a href="{{url('posts/'.$item->id)}}">{{$item->description}}</a>
+                                        <a href="{{url('posts/'.$item->id)}}">{{str_limit($item->description, 75)}}</a>
                                     </p>
-                                    <a href="{{url('posts/'.$item->id)}}"
-                                       class="btn read-more"><span>Read more</span></a>
+                                    <a href="{{url('posts/'.$item->id)}}" class="btn read-more"><span>Read more</span></a>
                                 </div>
                             </article>
                         @elseif($item->typecol == 1 && $item->thumbnail !== '')

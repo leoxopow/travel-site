@@ -108,7 +108,7 @@ class PostsController extends \BaseController {
 	{
 		$q = Input::get('q');
 		$posts = Post::where('title', 'like', '%'.$q.'%')->orWhere('body', 'like', '%'.$q.'%')->orWhere('description', 'like', '%'.$q.'%')->get();
-		$this->layout->content = View::make('pages.search', compact('posts'));
+		$this->layout->content = View::make('pages.search', compact('posts', 'q'));
 	}
 
 }
