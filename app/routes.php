@@ -23,7 +23,7 @@ Route::get('admin/categories',['before'=>'csrf', 'uses'=>'AdminController@create
 Route::get('admin/users','UserController@getIndex');
 
 
-Route::get('user/login', 'UsersControllers@index');
+Route::get('user/login', 'UsersController@index');
 Route::post('user/login', 'UsersController@auth');
 Route::get('user/logout', 'UsersController@logout');
 Route::controller('password', 'RemindersController');

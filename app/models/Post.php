@@ -65,4 +65,10 @@ class Post extends SleepingOwlModel implements ModelWithImageFieldsInterface
         return URL::asset($this->category->slug . '/' . $this->slug);
     }
 
+
+    public function comments()
+    {
+        return $this->morphMany('Fbf\LaravelComments\Comment', 'commentable');
+    }
+
 }
