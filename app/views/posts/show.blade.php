@@ -214,7 +214,7 @@
                             </section>
                             <section class="add-comment">
                                 <div class="head">
-                                    Add comment
+                                    @include('laravel-comments::comments', array('commentable' => $post, 'comments' => $post->comments))
                                 </div>
                                 <div class="body">
                                     <div class="media">

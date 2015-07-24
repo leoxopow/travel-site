@@ -17,7 +17,9 @@
     "rtconner/laravel-likeable": "0.2.*",
     "t4s/camelot-auth": "1.0.*",
     "intervention/image": "^2.3",
-    "fzaninotto/faker": "^1.5"
+    "fzaninotto/faker": "^1.5",
+    "fbf/laravel-comments": "dev-master"
+
   },
   "autoload": {
     "classmap": [
