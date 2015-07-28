@@ -59,7 +59,18 @@
     font-style: normal;
     font-weight: 700;
 }
-
+html, body{
+    height: 100%;
+}
+.wrapper{
+    min-height: 100%;
+    margin-bottom: -280px;
+    &::after{
+        content: "";
+        display: block;
+        height: 280px;
+    }
+}
 .btn, button, a{
     &:focus{
         outline: none;
@@ -72,6 +83,14 @@
     }
 }
 header{
+    .navbar-header{
+        .navbar-toggle{
+            border-color: #000;
+            .icon-bar{
+                background: #000000;
+            }
+        }
+    }
     .navbar-brand{
         padding-top: 22px;
     }
@@ -177,6 +196,15 @@ header{
                 font-size: 52px;
                 font-weight: 700;
                 line-height: 59.8px; 
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+            h2{
+                font-family: "Montserrat";
+                color:  #ffffff;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 35px;
                 margin-top: 0;
                 margin-bottom: 20px;
             }
@@ -346,6 +374,7 @@ header{
         margin-bottom: 20px;
         .thumb{
             overflow: hidden;
+            max-height: 170px;
         }
         .caption{
             background: #fff;
@@ -365,6 +394,11 @@ header{
                     font-weight: 700;
                     line-height: 18px;
                     margin-bottom: 6px;
+                    height: 35px;
+                    overflow-y: hidden;
+                    display: block;
+                    -ms-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
                 }
             }
             p{
@@ -615,6 +649,7 @@ header{
     }
 }
 footer{
+    min-height: 280px;
     background-color: #292b30;
     padding: 40px 0;
     .logo{
@@ -865,6 +900,11 @@ footer{
             font-size: 10px;
             color: #838d8f;
             border: 1px solid #e9e9e9;
+            transition: background-color 0.5s ease;
+            &:hover{
+                background-color: #ffffff;
+                color: #3c3d41;
+            }
         }
         .date{
             margin-right: 34px;
@@ -1554,4 +1594,81 @@ footer{
 }
 .article-inside{
     padding-bottom: 30px;
+}
+@media (min-width : 375px)
+and (max-width : 667px) {
+    .post-caption{
+        .caption{
+            h1{
+                font-size: 35px;
+            }
+        }
+    }
+    .post{
+        .share{
+            button{
+                margin-bottom: 10px;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+//Ipad portrait
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1)  {
+    .bx-wrapper{
+        .bx-controls-direction{
+            a{
+                display: none;
+            }
+        }
+    }
+}
+.navbar-collapse{
+    &.in{
+        position: relative;
+        z-index: 10;
+        background: #ffffff;
+        .navbar-main{
+            padding-left: 15px;
+            li{
+
+            }
+        }
+    }
+}
+.btn-search{
+    background: #ffffff;
+    border: none;
+    margin-left: 10px;
+    &:hover{
+        background: #f2f2f2;
+    }
+}
+.search-bar{
+    background: url('../images/Search_icon.png') 5px 8px no-repeat;
+    width: 40px !important;
+    -webkit-transition: width 0.8s;
+    transition: width 0.8s;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    &:hover{
+        cursor: pointer;
+    }
+    &:focus{
+        background: none;
+        width: 100px !important;
+
+    }
+}
+.navbar-form{
+    padding-top: 6px;
+}
+.pt15{
+    padding-top: 15px;
 }

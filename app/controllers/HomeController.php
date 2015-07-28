@@ -93,7 +93,7 @@ class HomeController extends BaseController
     public function imgResponsives($id)
     {
         $post = Post::find($id);
-        $img = Image::make(asset('images/thumbnails/' . $post->thumbnail))->fit(400, 300);
+        $img = Image::make(asset('images/thumbnails/' . $post->thumbnail))->fit(600, 300);
         $response = Response::make($img->encode('jpg'));
         $response->header('Content-Type', 'image/jpg');
         return $response;

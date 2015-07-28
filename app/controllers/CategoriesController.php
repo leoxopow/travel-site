@@ -121,4 +121,9 @@ class CategoriesController extends \BaseController {
         return "test";
     }
 
+	public function getCategory($slug)
+	{
+		$category = Category::where('slug', $slug)->first();
+		$this->show($category->id);
+	}
 }

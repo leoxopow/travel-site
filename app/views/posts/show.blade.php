@@ -2,7 +2,8 @@
 
 @section('content')
     <main>
-        <section class="post-caption with-img" data-speed="0.04" data-parallax="scroll" data-image-src="{{asset('images/thumbnails/'.$post->thumbnail)}}">
+        <section class="post-caption with-img" data-speed="0.04" data-parallax="scroll"
+                 data-image-src="{{asset('images/thumbnails/'.$post->thumbnail)}}">
 
             <div class="caption">
                 <div class="container">
@@ -14,8 +15,9 @@
                     <h1 class="text-center">
                         {{$post->title}}
                     </h1>
+
                     <p class="text-center">
-                        <span class="date"><img src="{{asset('app/images/clockIcon.png')}}"alt="">June 9, 2015 9:26 pm</span>
+                        <span class="date"><img src="{{asset('app/images/clockIcon.png')}}" alt="">June 9, 2015 9:26 pm</span>
                         {{--<a href="" class="like"><img src="{{asset('app/images/likeIcon.png')}}" alt="">1243</a>--}}
                         {{--<a href="" ><img src="{{asset('app/images/commentIcon.png')}}" alt="">13</a>--}}
                         {{--<button class="btn btn-shares">93 shares </button>--}}
@@ -26,44 +28,49 @@
         <section class="container article-inside">
             <div class="row">
                 <aside class="col-md-3">
-
-                    {{--<section class="author_card">--}}
-                        {{--<div class="info">--}}
-                            {{--<div class="text-center">--}}
-                                {{--<a href="#" class="avatar">--}}
-                                    {{--<img src="{{asset('app/images/ava-post.png')}}" alt="">--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                            {{--<div class="text-center">--}}
-                                {{--<a href="#" class="name">--}}
-                                    {{--Ekaterina <br> Burtseva--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                            {{--<div class="text-center">--}}
+                    @if($post->user_id !== 0)
+                        <section class="author_card">
+                            <div class="info">
+                                <div class="text-center">
+                                    <a href="#" class="avatar">
+                                        <img src="{{asset('app/images/ava-post.png')}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="text-center">
+                                    <a href="#" class="name">
+                                        {{$post->user->name}}
+                                    </a>
+                                </div>
+                                {{--<div class="text-center">--}}
                                 {{--<cite>Elite Author</cite>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="clearfix author-social">--}}
-                            {{--<div class="col-xs-4">--}}
-                                {{--<a href="#"><img src="{{asset('app/images/author_fb.png')}}" alt=""></a>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-xs-4">--}}
-                                {{--<a href="#"><img src="{{asset('app/images/twitter_author.png')}}" alt=""></a>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-xs-4">--}}
-                                {{--<a href="#"><img src="{{asset('app/images/instagram_author.png')}}" alt=""></a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="all-author-posts">--}}
-                            {{--<a href="#">All posts</a>--}}
-                        {{--</div>--}}
-                    {{--</section>--}}
+                                {{--</div>--}}
+                            </div>
+                            <div class="clearfix author-social">
+                                <div class="col-xs-4">
+                                    <a href="#"><img src="{{asset('app/images/author_fb.png')}}" alt=""></a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <a href="#"><img src="{{asset('app/images/twitter_author.png')}}" alt=""></a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <a href="#"><img src="{{asset('app/images/instagram_author.png')}}" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="all-author-posts">
+                                <a href="#">All posts</a>
+                            </div>
+                        </section>
+                    @endif
                 </aside>
                 <article class="col-md-8 post">
                     <p class="entry">
                         {{$post->description}}
                     </p>
-                    {{$post->body}}
+
+                    <p>
+                        {{$post->body}}
+                    </p>
+
                     <div class="tags">
 
                     </div>
@@ -81,6 +88,7 @@
         <section class="related-posts">
             <div class="container">
                 <h2 class="text-center">Related Articles</h2>
+
                 <div class="row">
                     <article class="col-md-3 article">
                         <div class="card">
@@ -93,6 +101,7 @@
                                 <h4>
                                     <a href="#">Watch: Rare Black Sea Devil Caught on Video</a>
                                 </h4>
+
                                 <p class="description">
                                     <a href="#">With its gaping mouth, needle-sharp teeth</a>
                                 </p>
@@ -110,6 +119,7 @@
                                 <h4>
                                     <a href="#">Stunning Changes Along Colorado River</a>
                                 </h4>
+
                                 <p class="description">
                                     <a href="#">Lake Powell offering kayakers new channels</a>
                                 </p>
@@ -127,6 +137,7 @@
                                 <h4>
                                     <a href="#">Watch: Rare Black Sea Devil Caught on Video</a>
                                 </h4>
+
                                 <p class="description">
                                     <a href="#">With its gaping mouth, needle-sharp teeth</a>
                                 </p>
@@ -144,6 +155,7 @@
                                 <h4>
                                     <a href="#">Stunning Changes Along Colorado River</a>
                                 </h4>
+
                                 <p class="description">
                                     <a href="#">Lake Powell offering kayakers new channels</a>
                                 </p>
@@ -162,7 +174,7 @@
                             <button class="edit">&nbsp;</button>
                         </div>
                         <div class="comments-block">
-                            <section class="media comment">
+                            {{--<section class="media comment">
                                 <a href="#" class="pull-left ava-comment">
                                     <img src="{{asset('app/images/ava-comment.png')}}" alt="">
                                 </a>
@@ -212,10 +224,10 @@
                                         </a>
                                     </p>
                                 </div>
-                            </section>
+                            </section>--}}
                             <section class="add-comment">
-                                <div class="head">
-                                    @include('laravel-comments::comments', array('commentable' => $post, 'comments' => $post->comments))
+                                @include('laravel-comments::comments', array('commentable' => $post, 'comments' => $post->comments))
+                                {{--<div class="head">
                                 </div>
                                 <div class="body">
                                     <div class="media">
@@ -229,7 +241,7 @@
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--}}
                             </section>
                         </div>
                     </div>
