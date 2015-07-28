@@ -3,16 +3,36 @@
 @section('content')
     <main>
         <div class="container">
-            {{Form::open(['url'=>'user/registration', 'files'=>true])}}
+            @if($errors->any())
+                <ul style="color: red;">
+                    {{implode('',$errors->all('<li>:massage </li>'))}}
+                </ul>
+            @if (session::has('message'))
+                <p>{{session::get('message')}}</p>
+                @endif
+
+
+            {{Form::open(['url'=>'register_action', 'files'=>true])}}
             <legend>Registration</legend>
 
             <div class="form-group">
-                <label for=""></label>
-                <input type="text" class="form-control" name="" id="" placeholder="Input...">
+                <p>Name:</p>
+                <p>{{Form::text('mame')}}</p>
+
+                <p>Login:</p>
+                <p>{{Form::text('username')}}</p>
+
+                <p>Avatar:</p>
+                <p>{{Form::imagesx(),'avatar'}}</p>
+
+                <p>Password</p>
+                {{Form::text('password')}}
+
+                <p>Confirm password</p>
+                {{Form::text('cpassword')}}
+                {{Form::submit('Submit')}}
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-            {{Form::close()}}
         </div>
     </main>
 @stop
