@@ -124,7 +124,8 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'SleepingOwl\Admin\AdminServiceProvider',
-		'Intervention\Image\ImageServiceProvider'
+		'Intervention\Image\ImageServiceProvider',
+		'Fbf\LaravelComments\LaravelCommentsServiceProvider'
 	),
 
 	/*
