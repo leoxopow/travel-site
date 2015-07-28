@@ -21,8 +21,12 @@ public function getIndex()
 }
 	Public function auth()
 {
-	return View::make('comment');
+
 }
+	public function comm()
+	{
+		return View::make('comment');
+	}
 
 	public static function create()
 	{
