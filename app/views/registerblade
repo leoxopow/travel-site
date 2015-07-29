@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+   <body>
+      @section('content')
+          <main>
+               <div class="container">
+                   @if($errors->any())
+                        <ul style="color: red;">
+                            {{implode('',$errors->all('<li>:massage </li>'))}}
+                        </ul>
+                            @if (session::has('message'))
+                                <p>{{session::get('message')}}</p>
+                            @endif
+
+
+                               {{Form::open(['url'=>'register_action', 'files'=>true])}}
+                                <legend>Registration</legend>
+
+                                 <div class="form-group">
+                                     <p>Name:</p>
+                                     <p>{{Form::text('mame')}}</p>
+                                     <p>Login:</p>
+                                     <p>{{Form::text('username')}}</p>
+
+                                    <p>Avatar:</p>
+                                    <p>{{Form::imagesx(),'avatar'}}</p>
+
+                                    <p>Password</p>
+                                    {{Form::text('password')}}
+
+                                    <p>Confirm password</p>
+                                    {{Form::text('cpassword')}}
+                                    {{Form::submit('Submit')}}
+                                 </div>
+
+                            </div>
+                        </main>
+   </body>
+
+</html>

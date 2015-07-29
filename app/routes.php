@@ -23,11 +23,19 @@ Route::get('admin/categories',['before'=>'csrf', 'uses'=>'AdminController@create
 Route::get('admin/users','UserController@getIndex');
 
 
-Route::get('user/login', 'UsersController@index');
+Route::get('user/login','UsersController@create');
 Route::post('user/login', 'UsersController@auth');
 Route::get('user/logout', 'UsersController@logout');
 Route::controller('password', 'RemindersController');
 Route::post('subscribe', ['before' => 'csrf', 'uses'=>'HomeController@subscribe']);
+//Route::get('register',function() {
+//    return View::make('register');
+//});
+
+Route::post('register_action', function(){
+    $obj= new RegisterController();
+    return $obj->store();
+});
 
 Route::any('imgPostThumbnail/{path}', 'HomeController@imgPostThumbnail');
 Route::any('imgPostThumbnail2col/{id}', 'HomeController@imgPostThumbnail2col');
