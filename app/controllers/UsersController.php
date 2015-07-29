@@ -1,31 +1,23 @@
 <?php
 
-class UsersController extends \BaseController {
-
-
-public function getIndex()
+class UsersController extends \BaseController
 {
 
-	$Users = User::allUsers()->count();
-	$rows = [];
-	foreach ($rows as $row)
-	{
-		$obj = new StdClass;
-		$obj->label = $row->title;
-		$obj->value = $row->allUsers->count();
-		$Users[] = $obj;
-	}
 
-	$data = compact('allUsers');
-	return View::make('index', $data);
-}
-	Public function auth()
-{
-
-}
-	public function comm()
+	public function getIndex()
 	{
-		return View::make('comment');
+
+		$Users = User::allUsers()->count();
+		$rows = [];
+		foreach ($rows as $row) {
+			$obj = new StdClass;
+			$obj->label = $row->title;
+			$obj->value = $row->allUsers->count();
+			$Users[] = $obj;
+		}
+
+		$data = compact('allUsers');
+		return View::make('index', $data);
 	}
 
 	public function create()
@@ -37,34 +29,41 @@ public function getIndex()
 
 
 	}
+
 	public function store()
 	{
-		$data = Input::except(array('_token'));
+		$Input = Input::all();
 		$rule = array(
-			'name' 		=> 'required|unique:users',
-			'username'  => 'required|unique:users',
-			'email'		=> 'required|email|unique:users',
-			'password'  => 'required|min:6|same:password',
-			'cpassword' => 'required|min:6'
-
+			'name' => 'required|unique:users',
+			'username' => 'required|unique:users',
+			'email' => 'required|email|unique:users',
+			'password' => 'required|min:6|same:cpassword',
+			'cpassword' => 'required|min:6',
 		);
-		
-		$validator = Validator::make($data,$rule);
-		if ($validator->fails())
-		{
-			return Redirect::action('UsersController@create');
 
+		$v = Validator:: make($Input, $rule);
+		if ($v->fails()) {
+			return Redirect::to('user/login')->withError($v);
+		} else {
+			$password = $input['password'];
+			$password = Hash::make($password);
 
+			$user = new User;
+			$user->name = $input['name'];
+			$user->username = $input['username'];
+			$user->email = $input['email'];
+			$user->password = $password;
+			$user->save();
+
+			return Redirect::to('user/login');
 		}
-		else
-		{
-			Register::saveFormData(Input::except(array('_token','password')));
-			return Redirect::action('HomeController@pageHome')
-				->withMessage('You registered');
-		}
-		Register::saveFormData(Input::except(array('_token')));
 	}
-
-
 }
+
+
+
+
+
+
+
 
