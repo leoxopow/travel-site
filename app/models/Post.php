@@ -32,6 +32,8 @@ class Post extends SleepingOwlModel implements ModelWithImageFieldsInterface
         return $arr;
     }
 
+
+
     public function getImageFields()
     {
         return [

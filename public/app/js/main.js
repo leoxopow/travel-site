@@ -53,9 +53,11 @@ $(function () {
                     html += '<article class="col-md-3 article appended">';
                         html += '<div class="card">';
                         html += '<div class="thumb">';
-                        html += '<a href="/posts/'+ posts[i].id +'">';
+                        html += '<a href="/posts/'+ posts[i].id +'" class="hidden-xs hidden-sm">';
                         html += '<img src="/imgPostThumbnail/'+ posts[i].id +'" alt="">';
                         html += '</a>';
+                        html += '<a href="/posts/'+ posts[i].id +'" class="hidden-md hidden-lg">';
+                        html += '<img src="/imgResponsives/'+ posts[i].id +'" alt="">';
                         html += '</div>';
                         html += '<div class="caption">'
                         html += '<h4>';
@@ -102,8 +104,11 @@ $(function () {
                     html += '<article class="col-md-3 article appended">';
                         html += '<div class="card">';
                         html += '<div class="thumb">';
-                        html += '<a href="/posts/'+ posts[i].id +'">';
+                        html += '<a href="/posts/'+ posts[i].id +'" class="hidden-xs hidden-sm">';
                         html += '<img src="/imgPostThumbnail/'+ posts[i].id +'" alt="">';
+                        html += '</a>';
+                        html += '<a href="/posts/'+ posts[i].id +'" class="hidden-md hidden-lg">';
+                        html += '<img src="/imgResponsives/'+ posts[i].id +'" alt="">';
                         html += '</a>';
                         html += '</div>';
                         html += '<div class="caption">'

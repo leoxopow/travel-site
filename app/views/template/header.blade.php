@@ -29,7 +29,12 @@
                             <a href="{{url('user/logout')}}" class="btn btn-signIn">Logout</a>
                         @endif
                     </li>
-                    <li><a href=""><img src="{{asset('app/images/Search_icon.png')}}" alt=""></a></li>
+                    <form action="{{url('search')}}" method="get" class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="search" name="q" class="form-control search-bar">
+                        </div>
+                        <button type="submit" class="hidden btn btn-default"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                    </form>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -16,10 +16,13 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="{{asset('app/js/modernizr.custom.js')}}"></script>
 </head>
 <body>
-@include('template.header')
-@yield('content')
+<div class="wrapper">
+    @include('template.header')
+    @yield('content')
+</div>
 @include('template.footer')
 @include('template.modals')
 {{--assets_begin--}}
@@ -27,6 +30,8 @@
 <script src="{{asset('app/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('app/bower_components/bxslider-4/dist/jquery.bxslider.min.js')}}"></script>
 <script src="{{asset('app/bower_components/parallax.js/parallax.js')}}"></script>
+<script src="{{asset('app/js/classie.js')}}"></script>
+<script src="{{asset('app/js/uisearch.js')}}"></script>
 <script src="{{asset('app/js/main.js')}}"></script>
 {{--assets_end--}}
 </body>

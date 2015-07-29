@@ -111,4 +111,9 @@ class PostsController extends \BaseController {
 		$this->layout->content = View::make('pages.search', compact('posts', 'q'));
 	}
 
+	public function getPost($slug_category, $slug_post)
+	{
+//		$post = Post::where('slug', $slug_post)->join();
+	}
+
 }

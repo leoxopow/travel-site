@@ -3,7 +3,7 @@
 @section('content')
     <main>
 
-        <section class="container-fluid">
+        <section class="container-fluid  hidden-xs">
             <div class="row">
                 <ul class="bxslider">
                     @foreach($slides as $slide)
@@ -11,9 +11,10 @@
                             <img src="{{url('imgMainSlider/'. $slide->post->id)}}" alt="">
 
                             <div class="caption">
-                                <h1 class="text-center">{{$slide->post->title}}</h1>
+                                <h1 class="text-center hidden-xs hidden-sm">{{$slide->post->title}}</h1>
+                                <h2 class="text-center hidden-lg hidden-md">{{$slide->post->title}}</h2>
 
-                                <p class="description">{{$slide->post->description}}</p>
+                                <p class="description hidden-xs hidden-sm">{{$slide->post->description}}</p>
                                 <a href="{{url('posts/'.$slide->post->id)}}" class="btn read-more">Read more</a>
                             </div>
                         </li>
@@ -21,7 +22,7 @@
                 </ul>
             </div>
         </section>
-        <section id="bx-pager" class="pager">
+        <section id="bx-pager" class="pager hidden-xs">
             <div class="container">
                 <div class="row-pager">
                     <?php $i = 0; ?>
@@ -46,10 +47,12 @@
                             <article class="col-md-3 col-sm-6 article">
                                 <div class="card">
                                     <div class="thumb">
-                                        <a href="{{url('posts/'.$item->id)}}">
+                                        <a href="{{url('posts/'.$item->id)}}" class="hidden-xs hidden-sm">
                                             <img src="{{url('imgPostThumbnail/'.$item->id)}}" alt="">
                                         </a>
-                                        <a href="{{url('post/'.$item->id)}}" class="visible-xs-block"></a>
+                                        <a href="{{url('posts/'.$item->id)}}" class="hidden-lg hidden-md">
+                                            <img src="{{url('imgResponsives/'.$item->id)}}" alt="">
+                                        </a>
                                     </div>
                                     <div class="caption">
                                         <h4>
@@ -137,11 +140,14 @@
 
                 <div class="row">
                     @foreach($most_popular as $item)
-                        <article class="col-md-3 article">
+                        <article class="col-md-3 col-sm-6 article">
                             <div class="card">
                                 <div class="thumb">
-                                    <a href="{{url('posts/'.$item->id)}}">
+                                    <a href="{{url('posts/'.$item->id)}}" class="hidden-xs hidden-sm">
                                         <img src="{{url('imgPostThumbnail/'.$item->id)}}" alt="">
+                                    </a>
+                                    <a href="{{url('posts/'.$item->id)}}" class="hidden-lg hidden-md">
+                                        <img src="{{url('imgResponsives/'.$item->id)}}" alt="">
                                     </a>
                                 </div>
                                 <div class="caption">

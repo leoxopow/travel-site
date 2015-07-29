@@ -19,10 +19,9 @@
                 </div>
                 <div class="col-xs-6">
                     <ul class="nav">
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Terms Of Service</a></li>
-                        <li><a href="">Terms Of Service</a></li>
+                        <li><a href="{{url('about')}}">About</a></li>
+                        <li><a href="{{url('contact')}}">Contact</a></li>
+                        <li><a href="{{url('terms')}}">Terms Of Service</a></li>
                     </ul>
                 </div>
             </section>

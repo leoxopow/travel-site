@@ -65,6 +65,10 @@ public function getIndex()
 		Register::saveFormData(Input::except(array('_token')));
 	}
 
-
+	public function logout()
+	{
+		Auth::logout();
+		return Redirect::back();
+	}
 }
 

@@ -42,11 +42,14 @@ Route::any('imgMainSlider/{id}', 'HomeController@imgMainSlider');
 Route::any('imgResponsives/{id}', 'HomeController@imgResponsives');
 Route::any('privacy', 'HomeController@privacy');
 
-Route::get('search', 'HomeController@search');
+Route::get('search', 'PostsController@search');
 Route::any('pageHome', 'HomeController@pageHome');
 Route::any('pageCategory', 'CategoriesController@pageCategory');
 
 Route::get('length', function(){
     return strlen('Light a bonfire in the garden, and step bravely into your best-dressed decade');
 });
-
+Route::get('register', 'HomeController@create');
+Route::get('{category_slug}', "CategoriesController@getCategory");
+Route::get('about', 'HomeController@about');
+Route::get('contact', 'HomeController@terms');
