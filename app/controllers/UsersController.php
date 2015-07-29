@@ -44,7 +44,7 @@ public function getIndex()
 			'name' 		=> 'required|unique:users',
 			'username'  => 'required|unique:users',
 			'email'		=> 'required|email|unique:users',
-			'password'  => 'required|min:6|same:cpassword',
+			'password'  => 'required|min:6|same:password',
 			'cpassword' => 'required|min:6'
 
 		);
