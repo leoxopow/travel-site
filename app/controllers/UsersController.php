@@ -28,8 +28,13 @@ public function getIndex()
 		return View::make('comment');
 	}
 
-	public static function create()
+	public function create()
 	{
+		$this->layout->content = View::make('users.create');
+//        $user = new user();
+//		$user -> fill(Input::all());
+//		$id = $user ->register ();
+
 
 	}
 	public function store()
@@ -38,21 +43,22 @@ public function getIndex()
 		$rule = array(
 			'name' 		=> 'required|unique:users',
 			'username'  => 'required|unique:users',
-			'email'		=>'required|email|unique:users',
+			'email'		=> 'required|email|unique:users',
 			'password'  => 'required|min:6|same:cpassword',
 			'cpassword' => 'required|min:6'
 
 		);
+		
 		$validator = Validator::make($data,$rule);
 		if ($validator->fails())
 		{
-			return Redirect::to('create')
-				->withErrors($validator->messages());
+			return Redirect::route('posts.index');
+
 		}
 		else
 		{
 			Register::saveFormData(Input::except(array('_token','password')));
-			return Redirect::to('create')
+			$this->layout->content = View::make('users.create'	)
 				->withMessage('You registered');
 		}
 		Register::saveFormData(Input::except(array('_token')));
