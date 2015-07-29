@@ -28,12 +28,10 @@ Route::post('user/login', 'UsersController@auth');
 Route::get('user/logout', 'UsersController@logout');
 Route::controller('password', 'RemindersController');
 Route::post('subscribe', ['before' => 'csrf', 'uses'=>'HomeController@subscribe']);
-//Route::get('register',function() {
-//    return View::make('register');
-//});
+
 
 Route::post('register_action', function(){
-    $obj= new RegisterController();
+    $obj= new UsersController();
     return $obj->store();
 });
 

@@ -21,11 +21,20 @@ public function getIndex()
 }
 	Public function auth()
 {
-	return View::make('comment');
-}
 
-	public static function create()
+}
+	public function comm()
 	{
+		return View::make('comment');
+	}
+
+	public function create()
+	{
+		$this->layout->content = View::make('users.create');
+//        $user = new user();
+//		$user -> fill(Input::all());
+//		$id = $user ->register ();
+
 
 	}
 	public function store()
@@ -34,21 +43,23 @@ public function getIndex()
 		$rule = array(
 			'name' 		=> 'required|unique:users',
 			'username'  => 'required|unique:users',
-			'email'		=>'required|email|unique:users',
-			'password'  => 'required|min:6|same:cpassword',
+			'email'		=> 'required|email|unique:users',
+			'password'  => 'required|min:6|same:password',
 			'cpassword' => 'required|min:6'
 
 		);
+		
 		$validator = Validator::make($data,$rule);
 		if ($validator->fails())
 		{
-			return Redirect::to('create')
-				->withErrors($validator->messages());
+			return Redirect::action('UsersController@create');
+
+
 		}
 		else
 		{
 			Register::saveFormData(Input::except(array('_token','password')));
-			return Redirect::to('create')
+			return Redirect::action('HomeController@pageHome')
 				->withMessage('You registered');
 		}
 		Register::saveFormData(Input::except(array('_token')));
