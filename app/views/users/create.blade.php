@@ -8,7 +8,7 @@
                     {{implode('',$errors->all('<li>:massage </li>'))}}
                 </ul>
             @endif
-
+             
 
 
             {{Form::open(['url'=>'register_action', 'files'=>true])}}

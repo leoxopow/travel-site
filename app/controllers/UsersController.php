@@ -52,13 +52,14 @@ public function getIndex()
 		$validator = Validator::make($data,$rule);
 		if ($validator->fails())
 		{
-			return Redirect::route('posts.index');
+			return Redirect::action('UsersController@create');
+
 
 		}
 		else
 		{
 			Register::saveFormData(Input::except(array('_token','password')));
-			$this->layout->content = View::make('users.create'	)
+			return Redirect::action('HomeController@pageHome')
 				->withMessage('You registered');
 		}
 		Register::saveFormData(Input::except(array('_token')));
