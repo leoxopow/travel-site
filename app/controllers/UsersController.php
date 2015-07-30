@@ -53,9 +53,15 @@ class UsersController extends \BaseController
 			$user->username = $input['username'];
 			$user->email = $input['email'];
 			$user->password = $password;
+				if(Input::hasFile('avatar'))
+				{
+					$file = Input::file('avatar');
+					$file = $file->move(public_path(). '/images/', $file->getClientOriginalName());
+					$user->avatar = $file->getRealPath();
+				}
 			$user->save();
 
-			return Redirect::to('user/login');
+			return Redirect::to('/');
 		}
 	}
 }

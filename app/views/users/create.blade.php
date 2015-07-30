@@ -20,6 +20,8 @@
 
                 <p>Login:</p>
                 <p>{{Form::text('username')}}</p>
+                <p>Avatar</p>
+                <p>{{Form::file('avatar')}}</p>
                 <p>Email:</p>
                 <p>{{Form::text('email')}}</p>
 
