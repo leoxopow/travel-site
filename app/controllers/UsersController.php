@@ -32,7 +32,7 @@ class UsersController extends \BaseController
 
 	public function store()
 	{
-		$Input = Input::all();
+		$input = Input::all();
 		$rule = array(
 			'name' => 'required|unique:users',
 			'username' => 'required|unique:users',
@@ -41,7 +41,7 @@ class UsersController extends \BaseController
 			'cpassword' => 'required|min:6',
 		);
 
-		$v = Validator:: make($Input, $rule);
+		$v = Validator:: make($input, $rule);
 		if ($v->fails()) {
 			return Redirect::to('user/login')->withError($v);
 		} else {

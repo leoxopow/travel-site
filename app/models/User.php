@@ -138,8 +138,10 @@ class User extends Eloquent implements  ModelWithImageFieldsInterface, UserInter
 		// TODO: Implement getRememberTokenName() method.
 	}
 
-	public static function create(array $rule)
+	public static function create(array $data)
+
 	{
+
 
 	}
 

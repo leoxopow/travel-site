@@ -8,7 +8,7 @@
                     {{implode('',$errors->all('<li>:massage </li>'))}}
                 </ul>
             @endif
-             
+
 
 
             {{Form::open(['url'=>'register_action', 'files'=>true])}}
@@ -16,7 +16,7 @@
 
             <div class="form-group">
                 <p>Name:</p>
-                <p>{{Form::text('mame')}}</p>
+                <p>{{Form::text('name')}}</p>
 
                 <p>Login:</p>
                 <p>{{Form::text('username')}}</p>
