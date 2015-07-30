@@ -125,7 +125,9 @@ return array(
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'SleepingOwl\Admin\AdminServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
-		'Fbf\LaravelComments\LaravelCommentsServiceProvider'
+		'Fbf\LaravelComments\LaravelCommentsServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
+
 	),
 
 	/*
@@ -200,6 +202,7 @@ return array(
 		'FormItem'             => 'SleepingOwl\Admin\Models\Form\FormItem',
 		'ModelItem'            => 'SleepingOwl\Admin\Models\ModelItem',
 		'Image'			=> 'Intervention\Image\Facades\Image',
+		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
 	),
 
