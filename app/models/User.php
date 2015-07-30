@@ -170,13 +170,13 @@ class User extends Eloquent implements  ModelWithImageFieldsInterface, UserInter
 				return $key;
 			}
 		}
-		throw new UnexpectedValueException;
+		//throw new UnexpectedValueException;
 	}
 
 	public function makeEmployee($title)
 	{
 		$assigned_roles = array();
-		$roles = array_fetch(Role::all()->toArray,'name');
+		$roles = array_fetch(Role::all()->toArray(),'name');
 		switch($title)
 		{
 			case 'administrator':

@@ -59,6 +59,7 @@ class UsersController extends \BaseController
 					$file = $file->move(public_path(). '/images/', $file->getClientOriginalName());
 					$user->avatar = $file->getRealPath();
 				}
+			$user->makeEmployee('subscriber');
 			$user->save();
 
 			return Redirect::to('/');
