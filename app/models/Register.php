@@ -9,4 +9,16 @@ class Register extends Eloquent
     {
         DB::table('users')->insert($data);
     }
+
+    public function register()
+    {
+        return[
+          'name'        => Input::get("name"),
+          'username'    => Input::get("username"),
+          'email'       => Input::get("email"),
+          'password'    => Input::get("password")
+
+        ];
+
+    }
 }
